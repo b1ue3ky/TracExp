@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tracexp"
+version = "0.1.0"
+description = "Trace-driven automated exploit synthesis for on-chain attacks"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "TracExp authors" }]
+keywords = ["ethereum", "evm", "blockchain", "security", "exploit-synthesis", "program-analysis", "llm"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Security",
+]
+dependencies = [
+  "disco @ git+https://github.com/b1ue3ky/disco.git",
+  "eth-hash>=0.7.0",
+  "matplotlib>=3.7.0",
+  "openai>=1.55.3",
+  "pandas>=2.0.0",
+  "python-dotenv>=1.0.0",
+  "requests>=2.31.0",
+  "tiktoken>=0.8.0",
+  "web3>=6.15.1",
+]
+
+[project.optional-dependencies]
+eval = [
+  "numpy>=1.24.0",
+  "pytest>=8.0.0",
+  "tqdm>=4.66.0",
+]
+dev = [
+  "numpy>=1.24.0",
+  "pytest>=8.0.0",
+  "tqdm>=4.66.0",
+]
+
+[project.urls]
+DiSCo = "https://github.com/b1ue3ky/disco"
+
+[tool.setuptools]
+packages = { find = { include = ["tracexp*"] } }
+
+[tool.setuptools.package-data]
+tracexp = ["tracer/*.js", "data/foundry/*"]

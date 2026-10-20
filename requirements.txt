@@ -1,0 +1,9 @@
+disco @ git+https://github.com/b1ue3ky/disco.git
+python-dotenv>=1.0.0
+eth-hash>=0.7.0
+matplotlib>=3.7.0
+openai>=1.55.3
+pandas>=2.0.0
+requests>=2.31.0
+tiktoken>=0.8.0
+web3>=6.15.1
